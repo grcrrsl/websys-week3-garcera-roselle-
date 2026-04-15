@@ -10,6 +10,10 @@ body {
   font-family: "Segoe UI", sans-serif;
   background: linear-gradient(to right, #e0f7fa, #e1bee7);
   line-height: 1.6;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* HEADER */
@@ -44,6 +48,57 @@ nav a {
 
 nav a:hover {
   color: #00e5ff;
+}
+
+/* ✅ HERO CENTER SECTION (IMPROVED) */
+#hero {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  padding: 60px 20px; /* FIX spacing */
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* MAIN TITLE */
+#hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* FIRST TEXT (name/introduction) */
+#hero p:first-of-type {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* SECOND TEXT (highlight line) */
+#hero p:last-of-type {
+  font-size: 1.2rem;
+  color: #6a11cb;
+  font-weight: bold;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* OPTIONAL BUTTON */
+.hero-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #6a11cb;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #2575fc;
 }
 
 /* SECTION */
@@ -101,23 +156,6 @@ footer {
   color: white;
   text-align: center;
   padding: 15px;
-  margin-top: 30px;
-}
-
-/* Make page full height */
-html,
-body {
-  height: 100%;
-}
-
-/* Use flexbox layout */
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Push footer down */
-footer {
   margin-top: auto;
 }
 
@@ -139,7 +177,6 @@ footer {
   transition: 0.3s;
 }
 
-/* HOVER EFFECT */
 .music-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -149,10 +186,10 @@ footer {
 .music-card img {
   width: 100%;
   height: 180px;
-  object-fit: contain;   /* shows full image */
-  object-position: center; /* centers image */
+  object-fit: contain;
+  object-position: center;
   border-radius: 10px;
-  background: #000; /* optional: clean background */
+  background: #000;
 }
 
 /* TEXT */
@@ -165,7 +202,7 @@ footer {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 15px;
-  background: #1db954; /* Spotify green */
+  background: #1db954;
   color: white;
   text-decoration: none;
   border-radius: 20px;
@@ -177,4 +214,14 @@ footer {
   background: #17a74a;
 }
 
-
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
